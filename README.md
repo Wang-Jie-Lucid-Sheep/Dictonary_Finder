@@ -75,9 +75,9 @@ driver.execute_script("arguments[0].click();",confirm_button)
 ```
 ## Select list Usage
 ```python
-from selenium.webdriver.support.select import Select  #Select class
+from selenium.webdriver.support.select import Select #The 'Select' class library
 select_list_box = driver.find_element_by_xpath('Select_Box_Xpath')
-Select_Box = Select(select_list_box)
+Select_Box = Select(select_list_box) #New a 'Select' class
 Select_Box.select_by_value('object of being selected')
 ```
 ## Screen clip from web
