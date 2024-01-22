@@ -1,7 +1,7 @@
 # Profile
 This is a python script that could find words means from Cambridge Dictionary automatically.
 
-This is another Python script for automatic load tothe shcool network.
+This is another Python script for automatic load to the shcool network.
 
 
 
@@ -26,6 +26,17 @@ This is Edge driver:*[Edge Driver](https://developer.microsoft.com/en-us/microso
 
 
 # Used Grammar
+## Load a Web
+```python
+from selenium import webdriver  #web library
+from msedge.selenium_tools import Edge, EdgeOptions #tools
+import time #time delay library
+options = EdgeOptions()
+options.use_chromium = True
+options.binary_location = r"Browser Path"
+driver = Edge(options=options, executable_path=r"Driver Path")
+driver.get("Web Address")
+```
 ##  Wait the web load
 ```python
 import time
@@ -35,13 +46,30 @@ time.sleep(2)
 ```python
 try:   #open the web
     driver.set_page_load_timeout(5)#automatically stop loading after a timeout of three seconds
-    driver.get("https://dictionary.cambridge.org/dictionary/english/")
+    driver.get("Web Address")
 except Exception as e:
      print(e)
 # other code
 ```
+## Input box
+```python
+input_box = driver.find_element_by_xpath('Input_Box_Xpath')
+input_box.send_keys("line")
+```
+
 ## Clean input box
 ```python
-input_box = driver.find_element_by_xpath('//*[@id="searchword"]')
+input_box = driver.find_element_by_xpath('Input_Box_Xpath')
 input_box.clear()
+```
+## Touch a Button
+```python
+search_bottom = driver.find_element_by_xpath('Button_Xpath')
+search_bottom.click()
+```
+## Screen clip from web
+```python
+driver = Edge(options=options, executable_path=r"Driver Path")
+driver.get("Web Address")
+driver.get_screenshot_as_file("photo_name")
 ```
