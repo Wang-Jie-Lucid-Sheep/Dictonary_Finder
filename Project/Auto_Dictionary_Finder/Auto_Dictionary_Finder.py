@@ -4,7 +4,7 @@ import time #time delay library
 options = EdgeOptions()
 options.use_chromium = True
 options.binary_location = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" # 浏览器的位置
-driver = Edge(options=options, executable_path=r"E:\河海大学\学习笔记\Python\Project\msedgedriver.exe") # 相应的浏览器的驱动位置
+driver = Edge(options=options, executable_path=r"E:\河海大学\学习笔记\Python\Dictonary_Finder\Project\msedgedriver.exe") # 相应的浏览器的驱动位置
 f = open ('word_list1.txt','r') #open the path of file
 line=" "  #single word variable
 
@@ -28,7 +28,7 @@ try:
 except Exception as e:
      print(e)
 
-i = 48
+i = 1
 photo_name=" "
 
 while True:
