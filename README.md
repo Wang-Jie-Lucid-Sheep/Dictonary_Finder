@@ -67,6 +67,19 @@ input_box.clear()
 search_bottom = driver.find_element_by_xpath('Button_Xpath')
 search_bottom.click()
 ```
+## Force button click
+```python
+driver.get("Web Address")
+confirm_button = driver.find_element_by_xpath('Button_Xpath')
+driver.execute_script("arguments[0].click();",confirm_button)
+```
+## Select list Usage
+```python
+from selenium.webdriver.support.select import Select  #Select class
+select_list_box = driver.find_element_by_xpath('Select_Box_Xpath')
+Select_Box = Select(select_list_box)
+Select_Box.select_by_value('object of being selected')
+```
 ## Screen clip from web
 ```python
 driver = Edge(options=options, executable_path=r"Driver Path")
